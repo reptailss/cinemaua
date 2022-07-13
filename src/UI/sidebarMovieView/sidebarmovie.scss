@@ -1,0 +1,10 @@
+.sidebar-movie{
+  padding: 20px 15px;
+  color: #ffffff;
+  &__item{
+    margin-top: 5px;
+    &-content{
+      padding-left: 10px;
+    }
+  }
+}

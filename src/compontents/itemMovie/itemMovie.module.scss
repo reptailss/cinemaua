@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  background-color: #000000!important;
+  color: white!important;
+  position: relative;
+}
+
+
+.images {
+  height: 160px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.box{
+  padding: 3px 0!important;
+}
+.title{
+  font-size: 15px;
+}
+.rating{
+  font-size: .75rem;
+}

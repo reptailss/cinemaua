@@ -1,0 +1,6 @@
+.movie__list{
+  &-similar{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
