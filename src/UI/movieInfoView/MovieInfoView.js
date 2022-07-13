@@ -4,9 +4,9 @@ import {Col, Row} from "react-bootstrap"
 import Button from '@mui/material/Button';
 
 
-import pathImg from "../../feature/pathImg"
-import sliceRalease from "../../feature/sliceRalease"
-import sliceString from "../../feature/sliceString"
+import pathImg from "../../utils/pathImg"
+import sliceRalease from "../../utils/sliceRalease"
+import sliceString from "../../utils/sliceString"
 
 import GenresList from '../../compontents/genresList/GenresList'
 

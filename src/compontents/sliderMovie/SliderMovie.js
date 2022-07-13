@@ -15,7 +15,7 @@ import './slider.scss'
 
 
 
-const SliderMovie = ({data, spaceBetween, breakpoints, status}) => {
+const SliderMovie = ({data, spaceBetween, breakpoints, status,isLoading}) => {
 
 
     const itemsSlide = data.map((item) => {
@@ -40,17 +40,12 @@ const SliderMovie = ({data, spaceBetween, breakpoints, status}) => {
     return (
         <Swiper
             breakpoints={breakpoints}
-            // scrollbar={{
-            //     hide: false,
-            //     draggable: true,
-            // }}
-            // modules={[Navigation, Scrollbar]}
             modules={[Navigation]}
             navigation
             spaceBetween={spaceBetween}
         >
 
-            {status === 'loading' ? skeletons : itemsSlide}
+            {isLoading ? skeletons : itemsSlide}
 
 
         </Swiper>

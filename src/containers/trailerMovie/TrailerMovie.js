@@ -6,8 +6,8 @@ import {Autoplay, Navigation} from 'swiper';
 import {Swiper, SwiperSlide,useSwiper } from 'swiper/react';
 
 
-import {getRandom} from '../../feature/getRandom'
-import pathImg from '../../feature/pathImg'
+import {getRandom} from '../../utils/getRandom'
+import pathImg from '../../utils/pathImg'
 
 
 import TrailerItem from '../../compontents/TrailerItem/TrailerItem'

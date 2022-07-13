@@ -6,14 +6,14 @@ import {fetchUpcomingMovie} from "../../redux/slice/upcomingSlice"
 import ErrorMessage from '../../compontents/errorMessage/ErrorMessage'
 
 import MoviedbService from '../../services/MoviedbService'
-import useWhyDidYouUpdate from "ahooks/lib/useWhyDidYouUpdate"
+// import useWhyDidYouUpdate from "ahooks/lib/useWhyDidYouUpdate"
 
 
  const moviedbService = new MoviedbService;
 
 const WithUpcoming = (BaseComponent) => {
 
-    useWhyDidYouUpdate('WithUpcoming',BaseComponent);
+
 
     const {upcomingMovie, status} = useSelector(state => state.upcoming)
 

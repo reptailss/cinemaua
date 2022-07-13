@@ -13,8 +13,8 @@ import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 
-import pathImg from '../../feature/pathImg'
-import sliceString from "../../feature/sliceString"
+import pathImg from '../../utils/pathImg'
+import sliceString from "../../utils/sliceString"
 
 import PlugImg from '../../resources/img/plugimg.png'
 

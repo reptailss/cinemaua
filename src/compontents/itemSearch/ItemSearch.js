@@ -9,9 +9,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 
-import pathImg from '../../feature/pathImg'
+import pathImg from '../../utils/pathImg'
 import PlugImg from '../../resources/img/plugimg.png'
-import sliceString from '../../feature/sliceString'
+import sliceString from '../../utils/sliceString'
 
 
 import styles from './itemSearch.module.scss'

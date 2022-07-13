@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 
 import {useSelector,useDispatch} from "react-redux"
-import {setPage} from '../../redux/slice/movieDataSlice'
+import {setPage} from '../../redux/slice/filterSlice'
 
 
 import styles from './Pagination.module.scss';
@@ -10,7 +10,7 @@ import styles from './Pagination.module.scss';
 
 const Pagination = () => {
 
-    const {totalPage} = useSelector(state => state.movieData)
+    const {totalPage} = useSelector(state => state.filter)
 
     const dispatch = useDispatch()
 

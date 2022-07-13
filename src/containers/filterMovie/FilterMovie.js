@@ -1,63 +1,59 @@
-import MoviedbService from '../../services/MoviedbService'
-
-import React, {useEffect} from 'react';
-import {useSelector,useDispatch} from "react-redux"
-
-import {setTotalPage} from "../../redux/slice/filterSlice"
-import {fetchMovieData} from "../../redux/slice/movieDataSlice"
-
-
+import {useDispatch, useSelector} from "react-redux"
+import {useGetFilteredMovieQuery} from '../../services/MovieService'
+import {setTotalPage} from '../../redux/slice/filterSlice'
 
 import ErrorMessage from '../../compontents/errorMessage/ErrorMessage'
 import ListSearch from "../../compontents/listSearch/ListSearch"
 import Pagination from "../../compontents/Pagination/Pagination"
 
-const moviedbService = new MoviedbService();
 
 const FilterMovie = () => {
 
-    const {filterProps} = useSelector(state => state.filter)
-
-    const {movieData, status,page,totalPage} = useSelector(state => state.movieData)
-
     const dispatch = useDispatch()
 
-    const {order,video,releaseGte,releaseLte,sort,withGenres} = filterProps;
+    const {filterProps} = useSelector(state => state.filter)
+    const {page, totalPage} = useSelector(state => state.filter)
 
+    const {order, video, releaseGte, releaseLte, sort, withGenres} = filterProps;
     const genresString = withGenres.toString();
 
-    const api = moviedbService.getFilterMovie(page,sort,order,video,releaseGte,releaseLte,genresString)
+    const {data, error} = useGetFilteredMovieQuery({
+        filterProps: {...filterProps, withGenres: genresString}, page
+    })
 
-
-    useEffect(() => {
-        dispatch(fetchMovieData(api))
-    }, [page,totalPage,sort,video,releaseGte,releaseLte,withGenres])
-
-
+    if (data) {
+        dispatch(setTotalPage(data.total_pages))
+    }
 
     const NoResults = () => {
-        return(
+        return (
             <div style={{color: 'white'}} className='mt-2 p-xl-3'>
                 No results
             </div>
         )
     }
 
-    const content = status === 'error' ?
+    console.log(data)
+    const dataResults = data ? data.results : [];
+
+    const content = error ?
         <ErrorMessage/> :
-        <ListSearch lengtOverview={350} data={movieData}/>
+        <ListSearch lengtOverview={350} data={dataResults}/>
+
+        const pagination = data ? data.total_pages > 1 ? <Pagination/> : null : null
 
     return (
         <>
-            {!movieData.length > 0 ? <NoResults/> : null}
+            {!dataResults.length > 0 ? <NoResults/> : null}
             {content}
-            {totalPage > 1 ?  <Pagination/> : null}
+            {pagination}
         </>
     )
-
-
 
 
 };
 
 export default FilterMovie;
+
+
+

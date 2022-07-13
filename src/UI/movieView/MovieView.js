@@ -4,8 +4,8 @@ import React from 'react';
 import {Col, Container, Row} from "react-bootstrap"
 import Rating from '@mui/material/Rating';
 
-import pathImg from "../../feature/pathImg"
-import sliceRalease from "../../feature/sliceRalease"
+import pathImg from "../../utils/pathImg"
+import sliceRalease from "../../utils/sliceRalease"
 
 import GenresList from '../../compontents/genresList/GenresList'
 

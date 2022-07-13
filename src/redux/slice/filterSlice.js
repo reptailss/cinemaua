@@ -13,7 +13,9 @@ const initialState = {
     },
     searchValue: '',
     genres: [],
-    statusGenres: 'loading'
+    statusGenres: 'loading',
+    page: 1,
+    totalPage : 1,
 }
 
 
@@ -30,6 +32,12 @@ export const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
+        setPage(state, action) {
+            state.page = action.payload
+        },
+        setTotalPage(state, action) {
+            state.totalPage = action.payload
+        },
         setSearch(state, action) {
             state.searchValue = action.payload
         },
@@ -42,6 +50,7 @@ export const filterSlice = createSlice({
         setReleaseGte(state, action) {
             state.filterProps.releaseGte = action.payload
         },
+
         setReleaseLte(state, action) {
             state.filterProps.releaseLte = action.payload
         },
@@ -78,6 +87,6 @@ export const filterSlice = createSlice({
 })
 
 
-export const {setSearch, setSort, setVideo, setReleaseGte, setReleaseLte, setGenre} = filterSlice.actions;
+export const {setSearch, setSort, setVideo, setReleaseGte, setReleaseLte, setGenre,setPage,setTotalPage} = filterSlice.actions;
 
 export default filterSlice.reducer;

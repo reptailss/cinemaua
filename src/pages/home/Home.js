@@ -15,6 +15,7 @@ import MovieInfoView from "../../UI/movieInfoView/MovieInfoView"
 import style from './home.module.scss'
 import React from "react"
 
+
 const breakpoints = {
     50: {
         slidesPerView: 2,
@@ -56,6 +57,7 @@ const Home = () => {
         <>
             <Container style={{maxWidth: '1000px'}} fluid>
                 <Row>
+
                     <Col xl={12}>
                         <TrendingMovie/>
                     </Col>

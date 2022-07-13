@@ -1,7 +1,7 @@
 import React from 'react';
 
-import pathImg from '../../feature/pathImg'
-import sliceString from '../../feature/sliceString'
+import pathImg from '../../utils/pathImg'
+import sliceString from '../../utils/sliceString'
 
 import './reviewview.scss'
 import plugImg from '../../resources/img/plugimg.png'
