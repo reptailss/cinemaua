@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import {useDispatch} from "react-redux"
 
@@ -22,6 +23,14 @@ import styles from './itemMovie.module.scss'
 
 
 const ItemMovie = ({title, name, poster_path, backdrop_path, vote_average, id}) => {
+
+
+    const params = useLocation()
+    console.log(params)
+
+    const pathLink = params.pathname.includes(`/movie`) ? `/../movie/${id}` : `movie/${id}`
+
+    console.log(pathLink)
 
     const dispatch = useDispatch()
 
@@ -55,7 +64,7 @@ const ItemMovie = ({title, name, poster_path, backdrop_path, vote_average, id}) 
                     image={imgMovie}
                     alt={titleMovie}/>
             </Tooltip>
-            <Link style={{textDecorationLine: 'none'}} to={`movie/${id}`}>
+            <Link style={{textDecorationLine: 'none'}} to={pathLink}>
                 <Button style={{
                     width: '100%',
                     height: '20px',
